@@ -1,0 +1,70 @@
+.app {
+    display: flex;
+    overflow:  hidden;
+    background-color: var(--layout-bg);
+    height: calc(100vh - var(--player-height));
+}
+
+
+
+
+
+
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    /* padding: 0 30px; */
+    width: calc(100% - 240px);
+    height: var(--header-height);
+    justify-content: space-between;
+    background-color: aquamarine;
+}
+
+.app__sidebar {
+    width: 240px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sidebar-bg);
+}
+
+.app__container {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden overlay;
+    background-color: bisque;
+    flex: 1;
+}
+
+.app__header {
+    width: 100%;
+    padding-top: 85px;
+    position: relative;
+    background-color: yellow;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 205px 0 0;
+    background-color: rgb(83, 13, 95)
+
+}
+.content__navbar {
+    display: flex;
+    min-height: 52px;
+    margin-bottom: 30px;
+    background-color: darkorange;
+}
+
+.content__container {
+    width: 100%;
+    padding: 0 4vw 0;
+    background-color: green;
+}

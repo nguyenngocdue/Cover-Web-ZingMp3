@@ -1,0 +1,25 @@
+:root {
+    --layout-bg: #170f23;
+    --sidebar-bg: rgba(255, 255, 255, 0.05);
+
+    --player-height: 90px;
+    --header-height: 70px;
+}
+
+* {
+    box-sizing: inherit;
+    
+}
+
+html {
+    font-size: 62.5%;
+
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--layout-bg);
+}
+
+
