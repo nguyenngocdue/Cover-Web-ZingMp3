@@ -1,9 +1,26 @@
 :root {
     --layout-bg: #170f23;
     --sidebar-bg: rgba(255, 255, 255, 0.05);
+    --img-logo-mp3: url(https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg);
+    --alpha-bg: hsla(0,0%,100%,0.1);
+
+    --white: #fff;
+    --black: #32323d;;
 
     --player-height: 90px;
     --header-height: 70px;
+    --text-sidebar: 1.3rem;
+    --text-item-hover: #fff;
+    --text-primary: #fff;
+
+
+    --text-color: #fff;
+    --navigation-text: #dadada;
+    --text-primary: #fff;
+
+    --border-primary: hsla(0,0%,100%,0.1);
+
+
 }
 
 * {
@@ -20,6 +37,72 @@ body {
     margin: 0;
     overflow: hidden;
     background: var(--layout-bg);
+    font-family: Inter,sans-serif;
+}
+button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+.zm-btn {
+    color: var(--black);
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    border-radius: 999px;
+    text-align: center;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.is-outlined {
+    border: 1px solid var(--border-primary);
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 26px;
+}
+
+.title {
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    margin: 0 28px 8px;
+    white-space: nowrap;
+}
+
+.icon {
+    font-size: 1.3rem;
+    /* padding: 5px; */
+    /* display: none; */
 }
 
 
+.is-hover-circle {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 14px;
+    height: 14px;
+    background: #352e3f;
+    border-radius: 999px;
+    display: none;
+}

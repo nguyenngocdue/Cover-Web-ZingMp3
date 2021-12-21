@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> 
+
+
     <link rel="stylesheet" href="./assets/base.css">
     <link rel="stylesheet" href="./assets/grid.css">
     <link rel="stylesheet" href="./assets/main.css">
+
+
 </head>
 <body>
     <div class="app">
@@ -26,15 +32,138 @@
         <!-- Siderbar -->
         <div class="app__sidebar">
             <div class="sidebar__logo">
-
+                <a href="" class="sidebar__logo-link">
+                    <img src="./assets/img/logos/main-logo.svg" alt="" class="siderbar__logo-img">
+                    <img src="./assets/img/logos/small-logo.svg" alt="" class="siderbar__logo-img">
+                </a>
             </div>
             <div class="sidebar__nav">
+                <ul class="sidebar__nav-list">
+                    <li class="sidebar__nav-item">
+                        <a href="" class="sidebar__nav-item-link">
+                            <i class="bi bi-music-player"></i>
+                            <span>Cá Nhân</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="" class="sidebar__nav-item-link">
+                            <i class="bi bi-record-circle"></i>
+                            <span>Khám Phá</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="" class="sidebar__nav-item-link">
+                            <i class="bi bi-pie-chart-fill"></i>
+                            <span>#Zingchart</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="" class="sidebar__nav-item-link">
+                            <i class="bi bi-broadcast"></i>
+                            <span>Radio</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="" class="sidebar__nav-item-link">
+                            <i class="bi bi-journal"></i>
+                            <span>Theo dõi</span>
+                        </a>
+                    </li>
+                </ul>
 
             </div>
             <div class="sidebar__subnav">
+                <ul class="sider__subnav-list">
+                    <li class="sider__subnav-item">
+                        <a href="" class="sider__subnav-item-link">
+                            <i class="bi bi-music-note-beamed"></i>
+                            <span>Nhạc Mới</span>
+                        </a>
+                    </li>
+                    <li class="sider__subnav-item">
+                        <a href="" class="sider__subnav-item-link">
+                            <i class="bi bi-blockquote-left"></i>
+                            <span>Thể Loại</span>
+                        </a>
+                    </li>
+                    <li class="sider__subnav-item">
+                        <a href="" class="sider__subnav-item-link">
+                            <i class="bi bi-star"></i>
+                            <span>Top 100</span>
+                        </a>
+                    </li>
+                    <li class="sider__subnav-item">
+                        <a href="" class="sider__subnav-item-link">
+                            <i class="bi bi-aspect-ratio"></i>
+                            <span>MV</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="sidebar__login">
+                    <p class="sidebar__login-description">Nghe nhạc không quảng cáo cùng kho nhạc VIP</p>
+                    <a class="zm-btn is-outlined" href="">nâng cấp VIP</a>
+                </div>
+
+                <ul class="sidebar__subnav-menu">
+                    <li class="sidebar__menu-item menu-header title">
+                        <h2 class="sidebar__menu-title"> THƯ VIỆN</h2>
+                        <i class="bi bi-pen"></i>
+                    </li>
+                    <li class="sidebar__menu-item">
+                        <a class="sidebar__menu-link">
+                           <img src="https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.13/static/media/my-song.cf0cb0b4.svg" alt=""> 
+                           <span>Bài hát</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__menu-item">
+                        <a class="sidebar__menu-link">
+                            <img src="https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.13/static/media/my-playlist.7e92a5f0.svg" alt="">
+                            <span>Playlist</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__menu-item">
+                        <a class="sidebar__menu-link">
+                            <img src="https://zjs.zadn.vn/zmp3-desktop/releases/v1.0.13/static/media/my-history.374cb625.svg" alt="">
+                            <span>Gần đây</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="sidebar__nav-mylist">
+                    <li class="sidebar__nav-item">
+                        <a href="" class="sidebar__nav-mylist-item-link">
+                            <span>Tháng 1</span>
+                            <button class="sidebar__nav-mylist-btn" >
+                                <i class="bi bi-three-dots icon is-hover-circle"></i>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="" class="sidebar__nav-mylist-item-link">
+                            <span>Nhạc Quốc Tế</span>
+                            <button class="sidebar__nav-mylist-btn" >
+                                <i class="bi bi-three-dots icon"></i>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="sidebar__nav-item">
+                        <a href="" class="sidebar__nav-mylist-item-link">
+                            <span>List Yêu Thích</span>
+                            <button class="sidebar__nav-mylist-btn" >
+                                <i class="bi bi-three-dots icon"></i>
+                            </button>
+                        </a>
+                    </li>
+                    
+                </ul>
 
             </div>
             <div class="sidebar__create-playlist">
+                <div class="sidebar__create-container">
+                    <i class="bi bi-plus-lg"></i>
+                    <h2 class="sidebar__create-titile"> Tạo playlist mới</h2>
+                </div>
 
             </div>
         </div>
@@ -42,7 +171,6 @@
         <!-- Tab personal -->
         <div class="app__container">
             <div class="app__header">
-                <p>This app container</p>
 
             </div>
             <div class="content">
