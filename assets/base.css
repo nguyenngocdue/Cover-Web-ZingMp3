@@ -7,12 +7,16 @@
     --primary-bg: #432275;
 
     --white: #fff;
-    --black: #32323d;;
+    --black: #32323d;
+    --yellow: #f8e71c;
+    --alpha-bg: hsla(0,0%,100%,0.1);
 
     --player-height: 90px;
     --header-height: 70px;
     --text-sidebar: 1.3rem;
     --text-search: 1.4rem;
+    --text-item-hover: #fff;
+    --tab-active-bg: hsla(0,0%,100%,0.3);
 
 
     --text-item-hover: #fff;
@@ -28,6 +32,10 @@
     --text-primary: #fff;
 
     --border-primary: hsla(0,0%,100%,0.1);
+
+    --sticky-header-box-shadow: rgba(0,0,0,0.1);
+
+    --navigation-text: #dadada;
 
 
 }
@@ -52,6 +60,7 @@ button {
     padding: 0;
     background-color: transparent;
     border: none;
+    color: inherit;
 }
 
 ul {
@@ -70,6 +79,13 @@ input {
     padding: 0;
     border: none;
     background-color: transparent;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    font-style: normal;
+    
 }
 
 .zm-btn {
@@ -127,3 +143,78 @@ input {
     user-select: none !important;
 }
 
+.zm-avatar-frame {
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.is-rounded {
+    overflow: hidden;
+    border-radius: 999px!important;
+}
+
+.header.is-sticky {
+    background-color: var(--layout-bg);
+    box-shadow: 0 3px 5px var(--sticky-header-box-shadow);
+}
+
+.vip-btn {
+    background-color: var(--yellow);
+    color: var(--black);
+
+}
+
+.vip-code-btn {
+    background-color: var(--alpha-bg);
+}
+
+
+.zm-btn {
+    font-size: 14px;
+    border-radius: 999px;
+    line-height: normal;
+    border: 0;
+    display: inline-block;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.is-small {
+    font-size: 12px;
+    padding: 6px 19px;
+}
+
+.is-upper {
+    text-transform: uppercase;
+}
+
+/* icon button cicle */
+.zm-btn-more {
+    border-radius: 50%;
+    background-color: var(--alpha-bg);
+    margin-left: 7px;
+    
+}
+.zm-tooltip-btn .icon {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 50%;
+}
+.icon {
+    line-height: 66%;
+    display: inline-block;
+}
+
+.isWhite {
+    color: var(--white);
+}
+.isBlurWhite {
+    color: var(--white);
+    opacity: 0.8;
+}

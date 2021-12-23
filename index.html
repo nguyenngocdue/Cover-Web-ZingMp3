@@ -18,7 +18,7 @@
 <body>
     <div class="app">
         <!-- Header -->
-        <header class="header grid">
+        <header class="header grid is-sticky ">
             
             <div class="header__with-search ">
                 <button class="header__button button--disabled">
@@ -28,7 +28,7 @@
                     <i class="bi bi-arrow-right"></i>
                 </button>
 
-                <div class="header__search is-collapse">
+                <div class="header__search">
                     <div class="header__search-btn">
                         <i class="bi bi-search"></i>
                     </div>
@@ -240,14 +240,56 @@
         <!-- Tab personal -->
         <div class="app__container">
             <div class="app__header">
+                <div class="app__header-bgBlur" style="background-image: url('./assets/img/avatar/ava.jpg');"></div>
+                <div class="app__header-overlay"></div>
+                <div class="app__header-container">
+                    <div class="app__header-user ">
+                        <div class="app__user-avatar zm-avatar-frame is-rounded">
+                            <img src="./assets/img/avatar/ava.jpg" alt="">
+                        </div>
+                        <h3 class="app__user-name">Nguyễn Ngọc Duệ</h3>
+                    </div>
+                    <div class="app__header-action">
+                        <a href="" class="zm-btn vip-btn is-small is-upper ">Nâng cấp vip </a>
+                        <a href="" class="zm-btn vip-code-btn is-small is-upper isWhite">Nhập code vip</a>
 
+                        <span class="app__header-action-more ">
+                            <button class="zm-btn-more zm-tooltip-btn">
+                                <i class="bi bi-three-dots icon isWhite "></i>
+                            </button>
+                        </span>
+
+                    </div>
+                </div>
             </div>
             <div class="content">
                 <div class="content__navbar">
-
+                    <div class="content__navbar-container">
+                        <ul class="content__navbar-menu">
+                            <li class="content__navbar-item is-active">
+                                <a class="content__navbar-link" href="">TỔNG QUAN</a>
+                            </li>
+                            <li class="content__navbar-item ">
+                                <a class="content__navbar-link" href="">BÀI HÁT</a>
+                            </li>
+                            <li class="content__navbar-item">
+                                <a class="content__navbar-link" href="">PAYLIST</a>
+                            </li>
+                            <li class="content__navbar-item">
+                                <a class="content__navbar-link" href="">NGHỆ SĨ</a>
+                            </li>
+                            <li class="content__navbar-item">
+                                <button class="zm-btn">
+                                <i class="bi bi-three-dots icon isBlurWhite"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="content__container">
+                    <!-- Tab home -->
                     <div class="container__tab">
+                        <!-- Play music -->
                         <div class="container__control">
                             
                         </div>
