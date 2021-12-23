@@ -8,22 +8,6 @@
 
 
 
-
-
-
-.header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    display: flex;
-    /* padding: 0 30px; */
-    width: calc(100% - 240px);
-    height: var(--header-height);
-    justify-content: space-between;
-    background-color: aquamarine;
-}
-
 .app__sidebar {
     width: 240px;
     height: 100%;
@@ -40,7 +24,7 @@
     left: 0;
     height: 100%;
     overflow: hidden overlay;
-    background-color: bisque;
+
     flex: 1;
 }
 
@@ -48,7 +32,6 @@
     width: 100%;
     padding-top: 85px;
     position: relative;
-    background-color: yellow;
 }
 .content {
     display: flex;
@@ -229,5 +212,163 @@
 }
 
 
+/* Header bar */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 0 30px;
+    height: var(--header-height);
+    width: calc(100% - 300px);
+    display: flex;
+    justify-content: space-between;
+}
 
 
+.header__with-search {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.header__button {
+    cursor: pointer;
+    color: var(--text-color);
+}
+.header__button i{
+    font-size: var(--size-icon-primary);
+    margin-right: 20px;
+}
+
+.header__search {
+    height: 40px;
+    max-width: 540px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background: var(--bg-content-color);
+    position: relative;
+}
+
+.header__search-ipt {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-style: none;
+    height: 34px;
+    font-size: 14px;
+    color: var(--text-search-color);
+    width: 95%;
+    outline: none;
+
+}
+
+.header__search-btn i{
+    font-size: var(--size-icon-primary);
+    color: var(--icon-color);
+    padding: 0 10px;
+}
+
+
+
+.header__nav-item-list {
+    display: flex;
+    list-style: none;
+    margin: 15px 0;
+}
+
+.header__nav-item {
+    margin-right: 10px;
+
+}
+
+.header__nav-btn {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-content-color);
+    display: flex;
+    margin: auto;
+    cursor: pointer;
+
+}
+.header__nav-icon{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    padding: 5px;
+    color: var(--icon-color);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.header__nav-btn label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+}
+
+.header__nav-btn img {
+    height: 38px;
+    width: 38px;
+}
+
+
+.header__suggest {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color:  var(--primary-bg);
+    color: var(--text-color);
+    border-radius: 0 0 20px 20px;
+}
+
+.header__suggest-list {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+}
+
+.header__suggest-title {
+    font-size: var(--text-search);
+    font-weight: 500;
+    padding: 8px 10px; 
+
+}
+
+.header__suggest-item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: var(--text-search);
+    width: 100%;
+    padding: 8px 10px; 
+}
+
+.header__suggest-item i {
+    font-size: 1.4rem;
+    opacity: 0.5;
+    padding-right: 10px;
+}
+
+.header__suggest-songname {
+    font-size: var(--text-search);
+    color: var(--text-color);
+    text-decoration: none;
+
+}
+
+.header__search.is-collapse {
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.05);
+    background-color: var(--primary-bg);
+}
