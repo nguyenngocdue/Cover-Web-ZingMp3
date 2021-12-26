@@ -3,3 +3,24 @@
     display: block;
     padding: 0;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: overlay hidden;
+
+}
+
+/* Chia theo hệ 12 column */
+.c-12 {
+    flex: 100%;
+    max-width: 100%;
+}
+
+

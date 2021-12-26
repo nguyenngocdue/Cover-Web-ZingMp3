@@ -6,42 +6,89 @@
     --bg-content-color: #ffffff1a;
     --primary-bg: #432275;
 
+    --dark-alpha-50: rgba(0,0,0,0.5);
+
     --white: #fff;
     --black: #32323d;
     --yellow: #f8e71c;
     --alpha-bg: hsla(0,0%,100%,0.1);
+    --purple-primary: #ed2b91;
 
     --player-height: 90px;
     --header-height: 70px;
     --text-sidebar: 1.3rem;
     --text-search: 1.4rem;
     --text-item-hover: #fff;
+    --text-title: 1.8rem;
+    --text-title-song: 1.4rem;
+    --text-subtitle-song: 1.2rem;
+
+    
     --tab-active-bg: hsla(0,0%,100%,0.3);
-
-
     --text-item-hover: #fff;
     --text-primary: #fff;
     --text-search-color: #eee;
+    --text-blur: hsla(0,0%,100%,0.1);
+
 
     --size-icon-primary: 2.4rem;
+    --icon-blur: hsla(0,0%,100%,0.1);
     --icon-color: #fff;
 
 
     --text-color: #fff;
     --navigation-text: #dadada;
     --text-primary: #fff;
+    --text-secondary: hsla(0,0%,100%,0.5);
 
     --border-primary: hsla(0,0%,100%,0.1);
+    --border-secondary: hsla(0,0%,100%,0.05);
 
     --sticky-header-box-shadow: rgba(0,0,0,0.1);
 
     --navigation-text: #dadada;
+    --loading-bg: hsla(0,0%,100%,0.1);
+
+    --scale-rate-second: calc(196 / 230);
+    --scale-rate-third: calc(162 / 230);
+    --offset-x-second: calc(0px - ((230px - (230px * var(--scale-rate-second))) / 2 +20px));
+    --offset-x-third: calc(0px - ((230px - (230px * var(--scale-rate-third))) / 2 +40px));
+
+    --song-item-action: hsla(0,0%,100%,0.5);
+    --hover-opacity: hsla(0,0%,100%,0.3);
+
+    --scroll-thumb-bg: hsla(0,0%,100%,0.3);
+    
+
 
 
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+  }
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset #fff;
+    border-radius: 4px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: inset 0 0 6px rgba(0, 0, 0, 0.05); 
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-thumb-bg); 
+  }
+
+
+
 * {
-    box-sizing: inherit;
+    box-sizing: border-box;
     
 }
 
@@ -81,12 +128,55 @@ input {
     background-color: transparent;
 }
 
+h3 {
+    margin: 0;
+}
+
 a {
     color: inherit;
     cursor: pointer;
     font-style: normal;
     
 }
+img {
+    height: auto;
+    width: 100%;
+
+}
+figure {
+    margin: 0;
+}
+
+
+
+
+/* Responsive PC */
+@media (min-width: 1024px) {
+    /* Chia theo 5 sản phẩm 12/5 = 2.4 */
+    .col-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+    .col {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .row {
+        margin-left: -15px;
+        margin-right: -15px
+    }
+}
+
+.mt-30 {
+    margin-top: 30px !important;
+}
+
+
+
+
 
 .zm-btn {
     color: var(--black);
@@ -130,9 +220,6 @@ a {
 .is-hover-circle {
     display: flex;
     flex-direction: column-reverse;
-    width: 14px;
-    height: 14px;
-    background: #352e3f;
     border-radius: 999px;
     display: none;
 }
@@ -154,6 +241,11 @@ a {
 .is-rounded {
     overflow: hidden;
     border-radius: 999px!important;
+}
+
+.is-center {
+    align-items: center;
+    justify-content: center;
 }
 
 .header.is-sticky {
@@ -217,4 +309,171 @@ a {
 .isBlurWhite {
     color: var(--white);
     opacity: 0.8;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.mar-r-15 {
+    margin-right: 15px!important;
+}
+
+.mar-t-5 {
+    margin-top: 5px !important;
+}
+.mar-t-10 {
+    margin-top: 10px !important;
+}
+
+/* Create node  */
+.zm-btn.is-outlined {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    background-color: var(--alpha-bg);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
+    margin: 0 auto;
+}
+
+.zm-btn.active {
+    background-color: var(--purple-primary);
+    border-color: var(--purple-primary);
+    color: var(--white);
+}
+
+.is-40x40 {
+    width: 40px;
+    height: 40px;
+}
+
+.level-item {
+    align-items: center;
+    display: flex;
+
+}
+
+/* ICON */
+
+
+.media-content .icon,
+.media-right .icon {
+    font-size:  16px;
+    padding: 5px;
+    border-radius: 50%;
+    margin-top: -1px;
+}
+.icon.ic-like-full {
+    color: var(--purple-primary);
+}
+.icon.moveCenter {
+    top: 3px;
+    position: relative;
+}
+
+.media i {
+    color: var(--white);
+}
+
+/* Pre Play Next */
+.zm-actions-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.zm-actions {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 4;
+    visibility: hidden;
+}
+.opacity {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-alpha-50);
+    visibility: hidden;
+}
+
+.flex--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.is-backgroud-linear {
+    background: linear-gradient(33deg, #5a1eae -7%, #ce267a 117%);
+    cursor: pointer;
+}
+
+.create__album-icon {
+    font-size: 4.7rem;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.create__album-text {
+    font-size: 1.4rem;
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.playlist-actions {
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.action-play {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.zm-actions-container i {
+    font-size: 1.6rem;
+    padding: 5px;
+}
+.icon.isWhite.islarge.action-play{
+    font-size: 3rem;
+}
+
+.zm-actions .is-hover-circle:hover {
+    background: var(--hover-opacity);
+}
+
+.zm-actions .is-hover-circle:hover {
+    background: var(--hover-opacity);
+}
+
+.zm-btn:hover {
+    filter: brightness(0.9);
+}
+
+.row__item-display:hover img {
+    transform: scale(1.1) translateZ(0);
+}
+.row__item-display img{
+    transition: transform 0.7s;
 }
