@@ -3,6 +3,8 @@
     overflow:  hidden;
     background-color: var(--layout-bg);
     height: calc(100vh - var(--player-height));
+    background-size: 1920px auto;
+    background-repeat: repeat;
 }
 
 
@@ -24,10 +26,13 @@
     left: 0;
     height: 100%;
     overflow: hidden overlay;
-
     flex: 1;
+    display: none;
 }
 
+.app__container.active {
+    display: block;
+}
 
 
 
@@ -770,6 +775,7 @@ a.zm-btn {
     height: 100%;
     width: 100%;
     border-radius: 4px;
+    position: relative;
 }
 
 .row__item-display {
@@ -784,11 +790,14 @@ a.zm-btn {
     line-height: 0;
 }
 
+.row__item-radio-info,
 .row__item-info {
     display: flex;
     flex-direction: column;
 }
 
+.row__item-radio-info-title,
+.row__item-radio-info,
 .row__item-info-name-artist,
 .row__item-info-name{
     color: var(--white);
@@ -797,6 +806,8 @@ a.zm-btn {
     font-size: var(--text-title-song);
     font-weight: 500;
 }
+
+
 .row__item-info-creator {
     color: var(--text-secondary);
     font-size: var(--text-subtitle-song);
@@ -820,8 +831,16 @@ a.zm-btn {
 .row__item-info.row__item-info-name-artist a:hover {
     color: var(--purple-primary);
     text-decoration: underline;
-
+    
 }
+
+.modal__close-btn:hover i {
+    color: var(--icon-color);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
 
 /* ************MODAL*************** */
 
@@ -839,6 +858,11 @@ a.zm-btn {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     overflow: hidden;
+    visibility: hidden;
+}
+
+.modal__theme.open {
+    visibility: visible;
 }
 
 .modal__theme-container {
@@ -856,6 +880,8 @@ a.zm-btn {
     top: 15px;
     right: 15px;
     margin: 0;
+    color: var(--white);
+    font-size: 2.2rem;
 }
 
 .modal__header-title {
@@ -866,11 +892,11 @@ a.zm-btn {
 }
 
 .modal__content {
+    max-height: 50vh;
     min-height: 500px;
     width: 100%;
     padding: 0 30px;
-    overflow: hidden overlay;
-
+    overflow-y: scroll;
 }
 
 @media (min-width: 1024px) {
@@ -885,10 +911,16 @@ a.zm-btn {
     .row.sm-gutter .col{
         padding: 0 7px;
     }
+    .row.sm-gutter {
+        margin-left: -7px;
+        margin-right: -7px;
+    }
 }
 
 
-
+.row.sm-gutter {
+    margin-bottom: 20px;
+}
 
 .modal__content-title {
     font-size: 1.8rem;
@@ -934,10 +966,23 @@ a.zm-btn {
     display: flex;
     flex-direction: column;
     width: 100px;
-    visibility: visible;
+    visibility: hidden;
     padding: 5px 0;
 
 }
+
+.theme__container-item:hover .theme-actions.zm-actions {
+    visibility: visible;
+}
+
+.theme__container-item:hover img {
+    transform: scale(1.2) translateZ(0);
+}
+.theme__container-item img {
+    transition: transform 0.7s;
+}
+
+
 
 .theme-actions .is-small {
     padding: 4px 0;
@@ -958,9 +1003,106 @@ a.zm-btn {
     
 }
 
-
 .theme-actions span{
     font-size: 8px;
 }
 
 /* END */
+
+/*Tab Radio */
+.app__container .app__container-content {
+    margin-top: 120px;
+    padding-left: 58px;
+    padding-right: 58px;
+}
+
+.row__item-display figure img{
+}
+
+
+.row__item-display .svg {
+    position: absolute;
+    transform: rotate(-90deg);
+    z-index: 2;
+    fill: transparent;
+
+}
+
+.row__item-display .cover {
+    border-radius: 50%;
+    height: 0;
+    line-height: 0;
+    padding-bottom: 100%;
+}
+
+.zm-card-s-image .host {
+    position: absolute;
+    z-index: 3;
+    border-radius: 50%;
+    top: 46.33%;
+    left: 78.33%;
+    height: 46px;
+    width: 46px;
+    overflow: hidden;
+}
+
+.row__item-radio-info::after {
+    content: "live";
+    position: absolute;
+    top: 72%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background-color: red;
+    line-height: 1;
+    z-index: 10;
+    text-transform: uppercase;
+    color: var(--white);
+    padding: 3px 4px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+/* PODCAST */
+.container__header-title figure{
+    border-radius: 5px;
+    line-height: 0;
+    overflow: hidden;
+
+}
+
+.container__header-title.special-playlist {
+    display: flex;
+    justify-content: flex-start;
+    flex: none;
+
+}
+
+.container__header.special-playlist {
+    height: 100%;
+    width: 100%;
+}
+
+.special-playlist--info {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.special-playlist--info h3 {
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-size: var(--text-size-secondary);
+    font-weight: 400;
+    padding-top: 5px;
+}
+
+.special-playlist--info a {
+    text-decoration: none;
+    color: var(--white);
+    font-style: 500;
+    font-size: var(--text-title);
+    padding-top: 8px;
+
+}

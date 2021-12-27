@@ -22,6 +22,7 @@
     --text-title: 1.8rem;
     --text-title-song: 1.4rem;
     --text-subtitle-song: 1.2rem;
+    --text-size-secondary: 1.4rem;
 
     
     --tab-active-bg: hsla(0,0%,100%,0.3);
@@ -29,6 +30,7 @@
     --text-primary: #fff;
     --text-search-color: #eee;
     --text-blur: hsla(0,0%,100%,0.1);
+
 
 
     --size-icon-primary: 2.4rem;
@@ -146,6 +148,9 @@ img {
 figure {
     margin: 0;
 }
+
+
+
 
 
 
@@ -347,6 +352,11 @@ figure {
 .is-40x40 {
     width: 40px;
     height: 40px;
+}
+
+.is-50x50 {
+    width: 50px;
+    height: 50px;
 }
 
 .level-item {
