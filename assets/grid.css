@@ -30,3 +30,21 @@
     max-width: 14.285714%;
 }
 
+/* Chia theo hệ 2 column */
+.col-1-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-2 {
+    width: 8.33%;
+}
+
+.col-10 {
+    width: calc(100% - 8.33%);
+
+}
+
+
+
+

@@ -631,20 +631,27 @@ a.zm-btn {
 
 .playlist__song-card-info {
     border-radius: 4px;
+    border-bottom: 1px solid var(--border-secondary);
 }
 
 .playlist .playlist__song-card-info:hover {
     background-color: var(--alpha-bg);
 }
-.playlist .opacity:hover {
+.playlist:hover .opacity {
     visibility: visible;
 }
-.playlist .zm-actions:hover {
+.playlist:hover .zm-actions {
     visibility: visible;
     font-size: 2rem;
     color: var(--white);
-
 }
+
+.album-info span:hover,
+.card-info a:hover {
+    text-decoration: underline;
+    color: var(--link-text-hover);
+}
+
 
 
 
@@ -789,6 +796,55 @@ a.zm-btn {
     border-radius: 5px;
     line-height: 0;
 }
+
+
+/* Heading Radio */
+.radio__container-section {
+    position: relative;
+}
+
+
+.zm-carousel-control-next{
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    z-index: 50;
+    background-color: var(--white);
+    border-radius: 50%;
+    right: 0;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(20%);
+}
+
+.zm-carousel-control-pre i,
+.zm-carousel-control-next i{
+    color: var(--black);
+    opacity: 0.8;
+}
+
+.zm-carousel-control-pre{
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    z-index: 50;
+    background-color: var(--white);
+    border-radius: 50%;
+    left: 0;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-20%);
+}
+
+.radio__container-section:hover .zm-carousel-control-pre,
+.radio__container-section:hover .zm-carousel-control-next {
+    opacity: 0.8;
+}
+
 
 .row__item-radio-info,
 .row__item-info {
@@ -1063,31 +1119,38 @@ a.zm-btn {
 }
 
 /* PODCAST */
+.container__header-section {
+    display: flex;
+}
 .container__header-title figure{
     border-radius: 5px;
     line-height: 0;
     overflow: hidden;
-
+    
 }
+
+.container__header-title:hover img {
+    transform: scale(1.1) translateZ(0);
+}
+.container__header-title img {
+    transition: 0.7s;
+}
+
+
 
 .container__header-title.special-playlist {
     display: flex;
     justify-content: flex-start;
     flex: none;
-
+    
 }
 
-.container__header.special-playlist {
-    height: 100%;
-    width: 100%;
-}
-
+/* Schedule Time */
 .special-playlist--info {
     padding-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 100%;
 }
 
 .special-playlist--info h3 {
@@ -1101,8 +1164,298 @@ a.zm-btn {
 .special-playlist--info a {
     text-decoration: none;
     color: var(--white);
-    font-style: 500;
     font-size: var(--text-title);
     padding-top: 8px;
+    font-weight: 600;
+}
+
+.special-playlist--info:hover a{
+    color: var(--purple-primary);
+}
+
+
+.schedule-body {
+    display: flex;
+}
+
+.schedule__body-left-card {
+    background-color: var(--alpha-bg);
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.schedule__body-left-container {
+    width: 100%;
+}
+
+.schedule__body-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: var(--text-title);
+    height: 38px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+
+
+.schedule__body-left-card {
+    background-color: var(--alpha-bg);
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+
+.schedule__body-left-card .zm-card {
+    display: flex;
+    height: 80px;
+    width: 108px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.schedule__body-left-card :nth-child(3) {
+    margin-bottom: 0;
+}
+
+
+.schedule__body-left-card .zm-card .zm-card-img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.schedule__programs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.time-lines {
+    display: inline-flex;
+    height: 38px;
+    align-items: center;
+}
+
+.time-lines .point {
+    width: 300px;
+    display: flex;
+    font-size: 18px;
+}
+
+.schedule__programs {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+
+.schedule__body-content {
+    position: relative;
+    overflow:  hidden overlay;
+}
+
+
+
+
+.schedule__body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--white);
+    font-size: var(--text-title);
+    height: 100%;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.schedule__body-content .line {
+    position: absolute;
+    z-index: 1;
+    width: 2px;
+    top: 10.5px;
+    left: 200px;
+    bottom: 0;
+    background-color: #66ffc4;
+}
+
+.schedule__body-content .line .marker {
+    position: absolute;
+    width: 60px;
+    color: var(--black);
+    font-weight: 500;
+    background-color: #66ffc4;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.schedule__body-content .line::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    border-width: 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #66ffc4 transparent;
+    transform: translateX(calc(-50% + 1px));
 
 }
+
+.schedule__body-container :nth-child(5) {
+    margin-bottom: 0;
+}
+
+.schedule__programs-item {
+    display: flex;
+}
+
+.schedule__programs-left figure {
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.schedule__programs-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 6px;
+}
+
+.schedule__programs-item {
+    padding: 8px;
+    margin-left: 8px;
+    border-radius: 4px;
+    background-color: var(--alpha-bg);
+    overflow: hidden;
+
+}
+
+.schedule__programs-content .title{
+    font-size: var(--text-title-song);
+    margin: 0 4px 0 0;
+    text-transform: none;
+}
+
+.schedule__programs-content .time{
+    color: var(--text-secondary);
+    font-size: var(--text-subtitle-song);
+    font-weight: 300;
+    padding-top: 8px;
+}
+
+.schedule__programs-container {
+    display: flex;
+}
+
+.schedule__body-content .arrow-btn-wrapper {
+    position: absolute;
+    width: 88px;
+    right: 0;
+    top: 38px;
+    bottom: 0;
+    background-image: linear-gradient(270deg, var(--layout-bg) -20%, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.schedule__body-content .arrow-btn-wrapper .arrow-btn {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--alpha-bg);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    position: relative;
+}
+
+.content:hover .zm-actions {
+    visibility: visible;
+    background-color: var(--dark-alpha-50);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* #ZingChart */
+.chart__container-header {
+    display: flex;
+    align-items: center;
+}
+.chart__hearder-name {
+    font-size: 40px;
+    color: var(--white);
+    padding-right: 8px;
+}
+
+.chart__hearder-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--purple-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart__container-header:hover .chart__hearder-btn {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.media .media-prefix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.media-prefix .song-prrfix-number{
+    width: 60px;
+    min-width: 38px;
+    font-size:  32px;
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    color: rgba(74,144,226,0);
+    font-family: "Roboto", sans-serif;
+    padding: 0 15px;
+    -webkit-text-stroke: 1.5px var(--text-primary);
+
+}
+
+.song-prrfix-number.is-top-1{
+    -webkit-text-stroke: 1px #4a90e2;
+    opacity: 1;
+}
+.song-prrfix-number.is-top-2{
+    -webkit-text-stroke: 1px #50e3c2;
+    opacity: 1;
+}
+.song-prrfix-number.is-top-3{
+    -webkit-text-stroke: 1px #e35050;
+    opacity: 1;
+}
+.strikethrough {
+    padding: 0 15px 0 10px;
+    opacity: 0.5;
+}
+
