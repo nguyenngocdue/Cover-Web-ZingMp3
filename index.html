@@ -16,7 +16,7 @@
 
 </head>
 <body>
-    <div class="app grid" style="background-image: url(./assets/img/theme_bg/Bg_svg/1.svg);" >
+    <div class="app grid" style="background-image: url(./assets/img/modal/Color/theme2.jpg);" >
         <!-- Header -->
         <header class="header grid is-sticky ">
             
@@ -108,13 +108,13 @@
             </div>
             <div class="sidebar__nav">
                 <ul class="sidebar__nav-list">
-                    <li class="sidebar__nav-item">
+                    <li class="sidebar__nav-item active">
                         <a href="#" class="sidebar__nav-item-link">
                             <i class="bi bi-music-player"></i>
                             <span>Cá Nhân</span>
                         </a>
                     </li>
-                    <li class="sidebar__nav-item">
+                    <li class="sidebar__nav-item ">
                         <a href="#" class="sidebar__nav-item-link">
                             <i class="bi bi-record-circle"></i>
                             <span>Khám Phá</span>
@@ -126,7 +126,7 @@
                             <span>#Zingchart</span>
                         </a>
                     </li>
-                    <li class="sidebar__nav-item">
+                    <li class="sidebar__nav-item ">
                         <a href="#" class="sidebar__nav-item-link">
                             <i class="bi bi-broadcast"></i>
                             <span>Radio</span>
@@ -238,7 +238,7 @@
         </div>
 
         <!-- Tab personal -->
-        <div class="app__container">
+        <div class="app__container active ">
             <div class="app__header">
                 <div class="app__header-bgBlur" style="background-image: url('./assets/img/avatar/ava.jpg');"></div>
                 <div class="app__header-overlay"></div>
@@ -392,7 +392,7 @@
                                                                 <div class="opacity"></div>
                                                                 <div class="zm-actions-container">
                                                                     <div class="zm-box zm-actions">
-                                                                        <button class="zm-btn">
+                                                                        <button class="zm-btn ">
                                                                             <i class="bi bi-play-fill is-hidden"></i>
                                                                         </button>
                                                                         <button class="zm-btn">
@@ -421,7 +421,7 @@
                                                         <div class="media-content">
                                                             <div class="album-info">
                                                                 <span>Besame (Single)</span>
-                                                                <button class="zm-btn is-hover-circle">
+                                                                <button class="zm-btn is-hover-circle micro-notify ">
                                                                     <i class="bi bi-mic icon "></i>
                                                                 </button>
                                                             </div>
@@ -431,7 +431,7 @@
                                                             <div class="action-items">
                                                                 <div class="level">
                                                                     <div class="level-item">
-                                                                        <button class="zm-btn is-hover-circle ">
+                                                                        <button class="zm-btn is-hover-circle library-notify">
                                                                             <i class="bi bi-heart-fill icon      moveCenter"></i>
                                                                         </button>
                                                                     </div>
@@ -481,7 +481,7 @@
                                                         <div class="media-content">
                                                             <div class="album-info">
                                                                 <span>Có Ai Ở Đây Không?(Single)</span>
-                                                                <button class="zm-btn is-hover-circle">
+                                                                <button class="zm-btn is-hover-circle micro-notify ">
                                                                     <i class="bi bi-mic icon "></i>
                                                                 </button>
                                                             </div>
@@ -491,7 +491,7 @@
                                                             <div class="action-items">
                                                                 <div class="level">
                                                                     <div class="level-item">
-                                                                        <button class="zm-btn is-hover-circle ">
+                                                                        <button class="zm-btn is-hover-circle library-notify">
                                                                             <i class="bi bi-heart-fill icon  moveCenter"></i>
                                                                         </button>
                                                                     </div>
@@ -516,7 +516,7 @@
                                                                             <i class="bi bi-play-fill is-hidden"></i>
                                                                         </button>
                                                                         <button class="zm-btn">
-                                                                            <i class="bi bi-play-fill icon isWhite"></i>
+                                                                            <i class="bi bi-play-fill icon isWhite "></i>
                                                                         </button>
                                                                         <button class="zm-btn">
                                                                             <i class="bi bi-play-fill is-hidden"></i>
@@ -2380,6 +2380,309 @@
             </div>
         </div>
 
+        <!-- Tab charts -->
+        <div class="app__container ">
+            <div class="app__container-content">
+                <div class="charts__container">
+                    <div class="grid">
+                        <div class="chart__container-header mb-40">
+                            <h3 class="chart__hearder-name">#Zingchart</h3>
+                            <button class="chart__hearder-btn">
+                                <i class="bi bi-play-fill icon is-large isWhite"></i>
+                            </button>
+                        </div>
+                        <div class="row">
+                            <div class="col c-12"> 
+                                    <!-- Song -->
+                                <div class="container__playlist">
+                                    <div class="playlist">
+                                        <div class="playlist__list-song">
+                                            <div class="playlist__song-card-info">
+                                                <div class="media">
+                                                    <!-- prefix -->
+                                                    <div class="media-prefix">
+                                                        <div class="song-prrfix">
+                                                            <span class="song-prrfix-number is-top-1">1</span>
+                                                        </div>
+                                                        <div class="strikethrough">
+                                                            <i class="bi bi-dash icon is-large"></i>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left -->
+                                                    <div class="media-left">
+                                                        <div class="song-thumb">
+                                                            <figure class="image is-40x40">
+                                                                <img src="./assets/img/music-title/Besame.webp" alt="">
+                                                            </figure>
+                                                            <div class="opacity"></div>
+                                                            <div class="zm-actions-container">
+                                                                <div class="zm-box zm-actions">
+                                                                    <button class="zm-btn">
+                                                                        <i class=" bi bi-play-fill is-hidden"></i>
+                                                                    </button>
+                                                                    <button class="zm-btn  song-btn--heart">
+                                                                        <i class=" btn--heart bi bi-play-fill icon isWhite"></i>
+                                                                    </button>
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill is-hidden"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-info">
+                                                            <div class="title-song">
+                                                                <span class="item-title">Besame</span>
+                                                            </div>
+                                                            <h3 class="is-oneline">
+                                                                <a href="" class="is-ghost">Play-N-Skillz</a>
+                                                                ,
+                                                                <a href="" class="is-ghost">Daddy Yankee</a>
+                                                                ,
+                                                                <a href="" class="is-ghost">Zion & Lennox</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <!-- center -->
+                                                    <div class="media-content">
+                                                        <div class="album-info">
+                                                            <span>Besame (Single)</span>
+                                                            <button class="zm-btn is-hover-circle btn--mic ">
+                                                                <i class="bi bi-mic icon "></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- right -->
+                                                    <div class="media-right">
+                                                        <div class="action-items">
+                                                            <div class="level">
+                                                                <div class="level-item">
+                                                                    <button class="song-btn--heart zm-btn is-hover-circle ">
+                                                                        <i class=" btn--heart  bi bi-heart icon moveCenter "></i>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="level-item duration">03:32</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="playlist__song-card-info">
+                                                <div class="media">
+                                                    <!-- prefix -->
+                                                    <div class="media-prefix">
+                                                        <div class="song-prrfix">
+                                                            <span class="song-prrfix-number is-top-2">2</span>
+                                                        </div>
+                                                        <div class="strikethrough">
+                                                            <i class="bi bi-dash icon is-large"></i>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left -->
+                                                    <div class="media-left">
+                                                        <div class="song-thumb">
+                                                            <figure class="image is-40x40">
+                                                                <img src="./assets/img/music-title/Besame.webp" alt="">
+                                                            </figure>
+                                                            <div class="opacity"></div>
+                                                            <div class="zm-actions-container">
+                                                                <div class="zm-box zm-actions">
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill is-hidden"></i>
+                                                                    </button>
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill icon isWhite"></i>
+                                                                    </button>
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill is-hidden"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-info">
+                                                            <div class="title-song">
+                                                                <span class="item-title">Besame</span>
+                                                            </div>
+                                                            <h3 class="is-oneline">
+                                                                <a href="" class="is-ghost">Play-N-Skillz</a>
+                                                                ,
+                                                                <a href="" class="is-ghost">Daddy Yankee</a>
+                                                                ,
+                                                                <a href="" class="is-ghost">Zion & Lennox</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <!-- center -->
+                                                    <div class="media-content">
+                                                        <div class="album-info">
+                                                            <span>Besame (Single)</span>
+                                                            <button class="zm-btn is-hover-circle btn--mic">
+                                                                <i class="bi bi-mic icon "></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- right -->
+                                                    <div class="media-right">
+                                                        <div class="action-items">
+                                                            <div class="level">
+                                                                <div class="level-item">
+                                                                    <button class="song-btn--heart zm-btn is-hover-circle ">
+                                                                        <i class=" btn--heart bi bi-heart icon      moveCenter "></i>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="level-item duration">03:32</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="playlist__song-card-info">
+                                                <div class="media">
+                                                    <!-- prefix -->
+                                                    <div class="media-prefix">
+                                                        <div class="song-prrfix">
+                                                            <span class="song-prrfix-number is-top-3">3</span>
+                                                        </div>
+                                                        <div class="strikethrough">
+                                                            <i class="bi bi-dash icon is-large"></i>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left -->
+                                                    <div class="media-left">
+                                                        <div class="song-thumb">
+                                                            <figure class="image is-40x40">
+                                                                <img src="./assets/img/music-title/Besame.webp" alt="">
+                                                            </figure>
+                                                            <div class="opacity"></div>
+                                                            <div class="zm-actions-container">
+                                                                <div class="zm-box zm-actions">
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill is-hidden"></i>
+                                                                    </button>
+                                                                    <button class="zm-btn btn--mic song-btn--heart">
+                                                                        <i class="btn--heart bi bi-play-fill icon isWhite"></i>
+                                                                    </button>
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill is-hidden"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-info">
+                                                            <div class="title-song">
+                                                                <span class="item-title">Besame</span>
+                                                            </div>
+                                                            <h3 class="is-oneline">
+                                                                <a href="" class="is-ghost">Play-N-Skillz</a>
+                                                                ,
+                                                                <a href="" class="is-ghost">Daddy Yankee</a>
+                                                                ,
+                                                                <a href="" class="is-ghost">Zion & Lennox</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <!-- center -->
+                                                    <div class="media-content">
+                                                        <div class="album-info">
+                                                            <span>Besame (Single)</span>
+                                                            <button class="zm-btn is-hover-circle btn--mic">
+                                                                <i class="bi bi-mic icon "></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- right -->
+                                                    <div class="media-right">
+                                                        <div class="action-items">
+                                                            <div class="level">
+                                                                <div class="level-item">
+                                                                    <button class="song-btn--heart zm-btn is-hover-circle ">
+                                                                        <i class=" btn--heart bi bi-heart icon      moveCenter"></i>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="level-item duration">03:32</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="playlist__song-card-info">
+                                                <div class="media">
+                                                    <!-- prefix -->
+                                                    <div class="media-prefix">
+                                                        <div class="song-prrfix">
+                                                            <span class="song-prrfix-number">3</span>
+                                                        </div>
+                                                        <div class="strikethrough">
+                                                            <i class="bi bi-dash icon is-large"></i>
+                                                        </div>
+                                                    </div>
+                                                    <!-- left -->
+                                                    <div class="media-left">
+                                                        <div class="song-thumb">
+                                                            <figure class="image is-40x40">
+                                                                <img src="./assets/img/music-title/Besame.webp" alt="">
+                                                            </figure>
+                                                            <div class="opacity"></div>
+                                                            <div class="zm-actions-container">
+                                                                <div class="zm-box zm-actions">
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill is-hidden"></i>
+                                                                    </button>
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill icon isWhite"></i>
+                                                                    </button>
+                                                                    <button class="zm-btn">
+                                                                        <i class="bi bi-play-fill is-hidden"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-info">
+                                                            <div class="title-song">
+                                                                <span class="item-title">Besame</span>
+                                                            </div>
+                                                            <h3 class="is-oneline">
+                                                                <a href="" class="is-ghost">Play-N-Skillz</a>
+                                                                ,
+                                                                <a href="" class="is-ghost">Daddy Yankee</a>
+                                                                ,
+                                                                <a href="" class="is-ghost">Zion & Lennox</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <!-- center -->
+                                                    <div class="media-content">
+                                                        <div class="album-info">
+                                                            <span>Besame (Single)</span>
+                                                            <button class="zm-btn is-hover-circle btn--mic">
+                                                                <i class="bi bi-mic icon"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- right -->
+                                                    <div class="media-right">
+                                                        <div class="action-items">
+                                                            <div class="level">
+                                                                <div class="level-item">
+                                                                    <button class="song-btn--heart zm-btn is-hover-circle ">
+                                                                        <i class=" btn--heart bi bi-heart icon      moveCenter   "></i>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="level-item duration">03:32</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Tab radio -->
         <div class="app__container">
             <div class="app__container-content">
@@ -3613,314 +3916,301 @@
             </div>
         </div>
 
-        <!-- Tab charts -->
-        <div class="app__container active">
-            <div class="app__container-content">
-                <div class="charts__container">
-                    <div class="grid">
-                        <div class="chart__container-header mb-40">
-                            <h3 class="chart__hearder-name">#Zingchart</h3>
-                            <button class="chart__hearder-btn">
-                                <i class="bi bi-play-fill icon is-large isWhite"></i>
-                            </button>
-                        </div>
-                        <div class="row">
-                            <div class="col c-12"> 
-                                    <!-- Song -->
-                                <div class="container__playlist">
-                                            <div class="playlist">
-                                                <div class="playlist__list-song">
-                                                    <div class="playlist__song-card-info">
-                                                        <div class="media">
-                                                            <!-- prefix -->
-                                                            <div class="media-prefix">
-                                                                <div class="song-prrfix">
-                                                                    <span class="song-prrfix-number is-top-1">1</span>
-                                                                </div>
-                                                                <div class="strikethrough">
-                                                                    <i class="bi bi-dash icon is-large"></i>
-                                                                </div>
-                                                            </div>
-                                                            <!-- left -->
-                                                            <div class="media-left">
-                                                                <div class="song-thumb">
-                                                                    <figure class="image is-40x40">
-                                                                        <img src="./assets/img/music-title/Besame.webp" alt="">
-                                                                    </figure>
-                                                                    <div class="opacity"></div>
-                                                                    <div class="zm-actions-container">
-                                                                        <div class="zm-box zm-actions">
-                                                                            <button class="zm-btn">
-                                                                                <i class=" bi bi-play-fill is-hidden"></i>
-                                                                            </button>
-                                                                            <button class="zm-btn  song-btn--heart">
-                                                                                <i class=" btn--heart bi bi-play-fill icon isWhite"></i>
-                                                                            </button>
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill is-hidden"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-info">
-                                                                    <div class="title-song">
-                                                                        <span class="item-title">Besame</span>
-                                                                    </div>
-                                                                    <h3 class="is-oneline">
-                                                                        <a href="" class="is-ghost">Play-N-Skillz</a>
-                                                                        ,
-                                                                        <a href="" class="is-ghost">Daddy Yankee</a>
-                                                                        ,
-                                                                        <a href="" class="is-ghost">Zion & Lennox</a>
-                                                                    </h3>
-                                                                </div>
-                                                            </div>
-                                                            <!-- center -->
-                                                            <div class="media-content">
-                                                                <div class="album-info">
-                                                                    <span>Besame (Single)</span>
-                                                                    <button class="zm-btn is-hover-circle btn--mic ">
-                                                                        <i class="bi bi-mic icon "></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            <!-- right -->
-                                                            <div class="media-right">
-                                                                <div class="action-items">
-                                                                    <div class="level">
-                                                                        <div class="level-item">
-                                                                            <button class="song-btn--heart zm-btn is-hover-circle ">
-                                                                                <i class=" btn--heart  bi bi-heart icon moveCenter "></i>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="level-item duration">03:32</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="playlist__song-card-info">
-                                                        <div class="media">
-                                                            <!-- prefix -->
-                                                            <div class="media-prefix">
-                                                                <div class="song-prrfix">
-                                                                    <span class="song-prrfix-number is-top-2">2</span>
-                                                                </div>
-                                                                <div class="strikethrough">
-                                                                    <i class="bi bi-dash icon is-large"></i>
-                                                                </div>
-                                                            </div>
-                                                            <!-- left -->
-                                                            <div class="media-left">
-                                                                <div class="song-thumb">
-                                                                    <figure class="image is-40x40">
-                                                                        <img src="./assets/img/music-title/Besame.webp" alt="">
-                                                                    </figure>
-                                                                    <div class="opacity"></div>
-                                                                    <div class="zm-actions-container">
-                                                                        <div class="zm-box zm-actions">
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill is-hidden"></i>
-                                                                            </button>
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill icon isWhite"></i>
-                                                                            </button>
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill is-hidden"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-info">
-                                                                    <div class="title-song">
-                                                                        <span class="item-title">Besame</span>
-                                                                    </div>
-                                                                    <h3 class="is-oneline">
-                                                                        <a href="" class="is-ghost">Play-N-Skillz</a>
-                                                                        ,
-                                                                        <a href="" class="is-ghost">Daddy Yankee</a>
-                                                                        ,
-                                                                        <a href="" class="is-ghost">Zion & Lennox</a>
-                                                                    </h3>
-                                                                </div>
-                                                            </div>
-                                                            <!-- center -->
-                                                            <div class="media-content">
-                                                                <div class="album-info">
-                                                                    <span>Besame (Single)</span>
-                                                                    <button class="zm-btn is-hover-circle btn--mic">
-                                                                        <i class="bi bi-mic icon "></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            <!-- right -->
-                                                            <div class="media-right">
-                                                                <div class="action-items">
-                                                                    <div class="level">
-                                                                        <div class="level-item">
-                                                                            <button class="song-btn--heart zm-btn is-hover-circle ">
-                                                                                <i class=" btn--heart bi bi-heart icon      moveCenter "></i>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="level-item duration">03:32</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="playlist__song-card-info">
-                                                        <div class="media">
-                                                            <!-- prefix -->
-                                                            <div class="media-prefix">
-                                                                <div class="song-prrfix">
-                                                                    <span class="song-prrfix-number is-top-3">3</span>
-                                                                </div>
-                                                                <div class="strikethrough">
-                                                                    <i class="bi bi-dash icon is-large"></i>
-                                                                </div>
-                                                            </div>
-                                                            <!-- left -->
-                                                            <div class="media-left">
-                                                                <div class="song-thumb">
-                                                                    <figure class="image is-40x40">
-                                                                        <img src="./assets/img/music-title/Besame.webp" alt="">
-                                                                    </figure>
-                                                                    <div class="opacity"></div>
-                                                                    <div class="zm-actions-container">
-                                                                        <div class="zm-box zm-actions">
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill is-hidden"></i>
-                                                                            </button>
-                                                                            <button class="zm-btn btn--mic song-btn--heart">
-                                                                                <i class="btn--heart bi bi-play-fill icon isWhite"></i>
-                                                                            </button>
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill is-hidden"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-info">
-                                                                    <div class="title-song">
-                                                                        <span class="item-title">Besame</span>
-                                                                    </div>
-                                                                    <h3 class="is-oneline">
-                                                                        <a href="" class="is-ghost">Play-N-Skillz</a>
-                                                                        ,
-                                                                        <a href="" class="is-ghost">Daddy Yankee</a>
-                                                                        ,
-                                                                        <a href="" class="is-ghost">Zion & Lennox</a>
-                                                                    </h3>
-                                                                </div>
-                                                            </div>
-                                                            <!-- center -->
-                                                            <div class="media-content">
-                                                                <div class="album-info">
-                                                                    <span>Besame (Single)</span>
-                                                                    <button class="zm-btn is-hover-circle btn--mic">
-                                                                        <i class="bi bi-mic icon "></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            <!-- right -->
-                                                            <div class="media-right">
-                                                                <div class="action-items">
-                                                                    <div class="level">
-                                                                        <div class="level-item">
-                                                                            <button class="song-btn--heart zm-btn is-hover-circle ">
-                                                                                <i class=" btn--heart bi bi-heart icon      moveCenter"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="level-item duration">03:32</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="playlist__song-card-info">
-                                                        <div class="media">
-                                                            <!-- prefix -->
-                                                            <div class="media-prefix">
-                                                                <div class="song-prrfix">
-                                                                    <span class="song-prrfix-number">3</span>
-                                                                </div>
-                                                                <div class="strikethrough">
-                                                                    <i class="bi bi-dash icon is-large"></i>
-                                                                </div>
-                                                            </div>
-                                                            <!-- left -->
-                                                            <div class="media-left">
-                                                                <div class="song-thumb">
-                                                                    <figure class="image is-40x40">
-                                                                        <img src="./assets/img/music-title/Besame.webp" alt="">
-                                                                    </figure>
-                                                                    <div class="opacity"></div>
-                                                                    <div class="zm-actions-container">
-                                                                        <div class="zm-box zm-actions">
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill is-hidden"></i>
-                                                                            </button>
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill icon isWhite"></i>
-                                                                            </button>
-                                                                            <button class="zm-btn">
-                                                                                <i class="bi bi-play-fill is-hidden"></i>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-info">
-                                                                    <div class="title-song">
-                                                                        <span class="item-title">Besame</span>
-                                                                    </div>
-                                                                    <h3 class="is-oneline">
-                                                                        <a href="" class="is-ghost">Play-N-Skillz</a>
-                                                                        ,
-                                                                        <a href="" class="is-ghost">Daddy Yankee</a>
-                                                                        ,
-                                                                        <a href="" class="is-ghost">Zion & Lennox</a>
-                                                                    </h3>
-                                                                </div>
-                                                            </div>
-                                                            <!-- center -->
-                                                            <div class="media-content">
-                                                                <div class="album-info">
-                                                                    <span>Besame (Single)</span>
-                                                                    <button class="zm-btn is-hover-circle btn--mic">
-                                                                        <i class="bi bi-mic icon"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                            <!-- right -->
-                                                            <div class="media-right">
-                                                                <div class="action-items">
-                                                                    <div class="level">
-                                                                        <div class="level-item">
-                                                                            <button class="song-btn--heart zm-btn is-hover-circle ">
-                                                                                <i class=" btn--heart bi bi-heart icon      moveCenter   "></i>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="level-item duration">03:32</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    
-                                                    
-                                                </div>
-                                            </div>
+
+
+        <!-- Siderbar now playing bar -->
+        <div class="app__siderbarPlay">
+            <div class="siderbarPlay__body">
+                <div class="siderbarPlay__player-quick">
+                    <div class="player-quick__container">
+                        <div class="player-quick__header">
+                            <div class="player-quick__header-left">
+                                <ul class="player-quick__header-left-item">
+                                    <li class="player-quick__header-left-lstPlay ">Danh sách phát</li>
+                                    <li class="player-quick__header-left-lstListening is-active">Nghe gần đây </li>
+                                </ul>
+
+                            </div>
+                            <div class="player-quick__header-right">
+                                <div class="player-quick__header-right-item">
+                                    <button class="player-quick__alarm btn-alarm">
+                                        <i class="bi bi-alarm icon isWhite "></i>
+                                    </button>
+                                    <button class="player-quick__more btn-more">
+                                        <i class="bi bi-three-dots icon isWhite "></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
+                        <div class="player-quick__song">
+                            <div class="player-quick__scroll">
+                                <div class="player-quick__list">
+                                    <div index="0" data-index="0" style="z-index: 1000;">
+                                        <div class="player-quick__list-item media-item full-left">
+                                            <div class="media is-pre">
+                                                <!-- left -->
+                                                <div class="media-left">
+                                                    <div class="song-thumb">
+                                                        <figure class="image is-40x40">
+                                                            <img src="./assets/img/music-title/Besame.webp" alt="">
+                                                        </figure>
+                                                        <div class="opacity"></div>
+                                                        <div class="zm-actions-container">
+                                                            <div class="zm-box zm-actions">
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill is-hidden"></i>
+                                                                </button>
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill icon isWhite"></i>
+                                                                </button>
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill is-hidden"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-info">
+                                                        <div class="title-song">
+                                                            <span class="item-title">Besame</span>
+                                                        </div>
+                                                        <h3 class="is-oneline subtitle">
+                                                            <a href="" class="is-ghost">Play-N-Skillz</a>
+                                                            ,
+                                                            <a href="" class="is-ghost">Daddy Yankee</a>
+                                                            ,
+                                                            <a href="" class="is-ghost">Zion & Lennox</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <!-- right -->
+                                                <div class="media-right">
+                                                    <div class="action-items">
+                                                        <div class="level">
+                                                            <div class="level-item">
+                                                                <button class="zm-btn is-hover-circle-siderbarPlay song-btn--heart ">
+                                                                    <i class="bi bi-heart mov-icon-player-quick"></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="level-item ">
+                                                                <button class="btn-more zm-btn is-hover-circle-siderbarPlay more-notify ">
+                                                                    <i class="bi bi-three-dots "></i>
+                                                                </button>
+                                                            
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="next-song">
+                                            <h3 class="title">Tiếp theo</h3>
+                                            <h3 class="subtitle">
+                                                <span>Từ playlist</span>
+                                                <a href="">
+                                                    <span>#Zingchart</span>
+                                                </a>
+                                            </h3>
+                                        </div>
+                                    </div>
+
+                                    <div index="0" data-index="0" style="z-index: 1000;">
+                                        <div class="player-quick__list-item media-item full-left">
+                                            <div class="media is-pre">
+                                                <!-- left -->
+                                                <div class="media-left">
+                                                    <div class="song-thumb">
+                                                        <figure class="image is-40x40">
+                                                            <img src="./assets/img/music-title/Besame.webp" alt="">
+                                                        </figure>
+                                                        <div class="opacity"></div>
+                                                        <div class="zm-actions-container">
+                                                            <div class="zm-box zm-actions">
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill is-hidden"></i>
+                                                                </button>
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill icon isWhite"></i>
+                                                                </button>
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill is-hidden"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-info">
+                                                        <div class="title-song">
+                                                            <span class="item-title">Besame</span>
+                                                        </div>
+                                                        <h3 class="is-oneline subtitle">
+                                                            <a href="" class="is-ghost">Play-N-Skillz</a>
+                                                            ,
+                                                            <a href="" class="is-ghost">Daddy Yankee</a>
+                                                            ,
+                                                            <a href="" class="is-ghost">Zion & Lennox</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <!-- right -->
+                                                <div class="media-right">
+                                                    <div class="action-items">
+                                                        <div class="level">
+                                                            <div class="level-item">
+                                                                <button class="zm-btn is-hover-circle-siderbarPlay song-btn--heart ">
+                                                                    <i class="bi bi-heart mov-icon-player-quick "></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="level-item ">
+                                                                <button class="btn-more zm-btn is-hover-circle-siderbarPlay more-notify ">
+                                                                    <i class="bi bi-three-dots "></i>
+                                                                </button>
+                                                            
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div index="0" data-index="0" style="z-index: 1000;">
+                                        <div class="player-quick__list-item media-item full-left">
+                                            <div class="media is-pre">
+                                                <!-- left -->
+                                                <div class="media-left">
+                                                    <div class="song-thumb">
+                                                        <figure class="image is-40x40">
+                                                            <img src="./assets/img/music-title/Besame.webp" alt="">
+                                                        </figure>
+                                                        <div class="opacity"></div>
+                                                        <div class="zm-actions-container">
+                                                            <div class="zm-box zm-actions">
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill is-hidden"></i>
+                                                                </button>
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill icon isWhite"></i>
+                                                                </button>
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill is-hidden"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-info">
+                                                        <div class="title-song">
+                                                            <span class="item-title">Besame</span>
+                                                        </div>
+                                                        <h3 class="is-oneline subtitle">
+                                                            <a href="" class="is-ghost">Play-N-Skillz</a>
+                                                            ,
+                                                            <a href="" class="is-ghost">Daddy Yankee</a>
+                                                            ,
+                                                            <a href="" class="is-ghost">Zion & Lennox</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <!-- right -->
+                                                <div class="media-right">
+                                                    <div class="action-items">
+                                                        <div class="level">
+                                                            <div class="level-item">
+                                                                <button class="zm-btn is-hover-circle-siderbarPlay song-btn--heart ">
+                                                                    <i class="bi bi-heart mov-icon-player-quick"></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="level-item ">
+                                                                <button class="btn-more zm-btn is-hover-circle-siderbarPlay more-notify ">
+                                                                    <i class="bi bi-three-dots "></i>
+                                                                </button>
+                                                            
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div index="0" data-index="0" style="z-index: 1000;">
+                                        <div class="player-quick__list-item media-item full-left">
+                                            <div class="media is-pre">
+                                                <!-- left -->
+                                                <div class="media-left">
+                                                    <div class="song-thumb">
+                                                        <figure class="image is-40x40">
+                                                            <img src="./assets/img/music-title/Besame.webp" alt="">
+                                                        </figure>
+                                                        <div class="opacity"></div>
+                                                        <div class="zm-actions-container">
+                                                            <div class="zm-box zm-actions">
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill is-hidden"></i>
+                                                                </button>
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill icon isWhite"></i>
+                                                                </button>
+                                                                <button class="zm-btn">
+                                                                    <i class="bi bi-play-fill is-hidden"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-info">
+                                                        <div class="title-song">
+                                                            <span class="item-title">Besame</span>
+                                                        </div>
+                                                        <h3 class="is-oneline subtitle">
+                                                            <a href="" class="is-ghost">Play-N-Skillz</a>
+                                                            ,
+                                                            <a href="" class="is-ghost">Daddy Yankee</a>
+                                                            ,
+                                                            <a href="" class="is-ghost">Zion & Lennox</a>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <!-- right -->
+                                                <div class="media-right">
+                                                    <div class="action-items">
+                                                        <div class="level">
+                                                            <div class="level-item">
+                                                                <button class="zm-btn is-hover-circle-siderbarPlay song-btn--heart ">
+                                                                    <i class="bi bi-heart mov-icon-player-quick "></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="level-item ">
+                                                                <button class="btn-more zm-btn is-hover-circle-siderbarPlay more-notify ">
+                                                                    <i class="bi bi-three-dots "></i>
+                                                                </button>
+                                                            
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                        
+                                </div>
+    
+    
+    
+                            </div>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
+
         </div>
-
-
-
 
 
 

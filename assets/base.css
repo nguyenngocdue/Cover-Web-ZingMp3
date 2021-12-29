@@ -244,6 +244,11 @@ figure {
     border-radius: 999px;
 }
 
+.is-hover-circle-siderbarPlay {
+    line-height: 0;
+    padding: 4px 5px;
+    margin: 0 4px;
+}
 .button--disabled {
     opacity: 0.3 !important;
     cursor: default !important;
@@ -314,7 +319,7 @@ figure {
 .zm-btn-more {
     border-radius: 50%;
     background-color: var(--alpha-bg);
-    margin-left: 7px;
+    margin-left: 6px;
     
 }
 .zm-tooltip-btn .icon {
@@ -368,6 +373,12 @@ figure {
     color: var(--white);
 }
 
+.sidebar__nav-item.active {
+    background-color: var(--alpha-bg);
+
+}
+
+
 .is-40x40 {
     width: 40px;
     height: 40px;
@@ -381,8 +392,118 @@ figure {
 .level-item {
     align-items: center;
     display: flex;
+    position: relative;
 
 }
+
+.zm-btn.library-notify:before {
+    position: absolute;
+    top: -30px;
+    transform: translateX(-40%);
+    content: "Xóa khỏi thư viện";
+    color: var(--white);
+    background-color: var(--black);
+    padding: 10px 6px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 50px);
+    z-index: 100;
+    overflow: visible;
+
+    visibility: hidden;
+}
+
+.library-notify:after {
+    position: absolute;
+    top: -12px;
+    transform: translateX(-112%);
+    content: "";
+    border-width: 10px 10px;
+    border-style: solid;
+    border-color: var(--black) transparent transparent transparent ;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.zm-btn:hover .library-notify {
+    visibility: visible;
+}
+
+
+
+
+.zm-btn.micro-notify:before {
+    position: absolute;
+    top: -30px;
+    transform: translateX(-40%);
+    content: "Phát cùng lời bài hát";
+    color: var(--white);
+    background-color: var(--black);
+    padding: 10px 6px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+
+    align-items: center;
+    justify-content: center;
+    width: calc(100% + 75px);
+    z-index: 100;
+    overflow: visible
+}
+
+.micro-notify:after {
+    position: absolute;
+    top: -12px;
+    transform: translateX(-112%);
+    content: "";
+    border-width: 10px 10px;
+    border-style: solid;
+    border-color: var(--black) transparent transparent transparent ;
+    z-index: 10;
+}
+
+
+
+
+.zm-btn.more-notify:before {
+    position: absolute;
+    top: -30px;
+    transform: translateX(-25%);
+    content: "Khác";
+    color: var(--white);
+    background-color: var(--black);
+    padding: 10px 6px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+
+    align-items: center;
+    justify-content: center;
+    width: calc(100%);
+    z-index: 100;
+    overflow: visible;
+
+    visibility: hidden;
+}
+
+.more-notify:after {
+    position: absolute;
+    top: -12px;
+    transform: translateX(-112%);
+    content: "";
+    border-width: 10px 10px;
+    border-style: solid;
+    border-color: var(--black) transparent transparent transparent ;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.level-item:hover .more-notify {
+    visibility: visible;
+}
+
+
 
 /* ICON */
 
@@ -487,9 +608,10 @@ figure {
 }
 
 .is-large {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
 }
 
+.level-item:hover .is-hover-circle-siderbarPlay,
 .album-info .is-hover-circle:hover,
 .level-item:hover .is-hover-circle {
     background-color: var(--alpha-bg);
@@ -507,7 +629,7 @@ figure {
     transition: transform 0.7s;
 }
 
-.btn--heart.bi-heart-fill.icon.primary{
+.bi-heart-fill.primary{
     color: var(--purple-primary);
 }
 
@@ -522,4 +644,22 @@ figure {
 
 .bi.bi-mic.icon.primary {
     color: var(--purple-primary);
+}
+.player-quick__header-right-item i {
+    font-size: 1.5rem;
+}
+.player-quick__header-right-item {
+    display: flex;
+}
+
+.player-quick__more,
+.player-quick__alarm {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--alpha-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
 }
