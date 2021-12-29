@@ -10,7 +10,7 @@ const songListquick = Array.from($$('.player-quick__list'));
 const appContainers = Array.from($$('.app__container'));
 const sidebarNavItems = Array.from($$('.sidebar__nav-list .sidebar__nav-item'));
 const header = $('.header');
-const App = $('.app');
+// const App = $('.app');
 
 
 
@@ -108,7 +108,93 @@ const App = $('.app');
         });
     
     
+        const firstSlide = $('.explore__slide-item.first');
+        const secondSlide = $('.explore__slide-item.second');
+        const thirdSlide = $('.explore__slide-item.third');
+        const fourthSlide = $('.explore__slide-item.fourth');
+        const sixthSlide = $('.explore__slide-item.sixth');
+const app = {
+   
+    prevSlide: function() {
+        const slideMoveItems = Array.from($$('.explore__slide-container .explore__slide-item'));
+        $('.explore__slide-item.next').classList.remove('next');
+        $('.explore__slide-item.prev').classList.remove('prev');
+
+        const fifthSlideIndex = slideMoveItems.indexOf(sixthSlide) === 0 ? slideMoveItems.length - 1 : slideMoveItems.indexOf(sixthSlide) - 1;
+
+        const fifthSlide = slideMoveItems[fifthSlideIndex]; //gán fifthSlide cho vị trí sau lưng sixth ; OUT = 2
+  
+        fifthSlide.classList.replace('first', 'second');
+        secondSlide.classList.replace('second', 'third');
+        thirdSlide.classList.add('prev');
+        thirdSlide.classList.replace('third', 'fourth');
+        fourthSlide.classList.replace('fourth', 'fifth');
+        fifthSlide.classList.replace('fifth', 'sixth');
+        sixthSlide.classList.add('next');
+        sixthSlide.classList.replace('sixth', 'first'); 
+    },
+    nextSlide: function(){
+        const slideMoveItems = Array.from($$('.explore__slide-container .explore__slide-item'));
+        $('.explore__slide-item.next').classList.remove('next');
+        $('.explore__slide-item.prev').classList.remove('prev');
+        const fifthSlideIndex = slideMoveItems.indexOf(firstSlide) === slideMoveItems.length - 1 ? 0 : slideMoveItems.indexOf(firstSlide) +1;
+
+        console.log(slideMoveItems)
+
+        const fifthSlide = slideMoveItems[fifthSlideIndex];
+        console.log(fifthSlide, slideMoveItems.indexOf(fifthSlide))
+
+        firstSlide.classList.add('prev');
+        firstSlide.classList.replace('first', 'sixth');
+        secondSlide.classList.replace('second', 'first');
+        thirdSlide.classList.replace('third', 'second');
+        fourthSlide.classList.add('next');
+        fourthSlide.classList.replace('fourth', 'third');
+        fifthSlide.classList.replace('fifth', 'fourth');
+        sixthSlide.classList.replace('sixth', 'fifth')
+
+    
+    },
+    handleEvents: function(){
+        const _this = this;
+        const slideMove = $('.explore__slide-container .explore__slide-item');
+
+
+
+        // Handle when click on explore slide show move buttons
+        function exploreSlideShow() {
+            _this.nextSlide();
+            let autoMoveSlideId = setTimeout(exploreSlideShow, 4000)
+            slideMove.onclick = (e) => {
+                const prevBtn = e.target.closest('.slide__move-btn.btn--prev')
+                const nextBtn = e.target.closest('.slide__move-btn.btn--next')
+                
+                if(prevBtn) {
+                    _this.prevSlide();
+                    clearTimeout(autoMoveSlideId);
+                    autoMoveSlideId = setTimeout(exploreSlideShow, 4000)
+                }
+    
+                if(nextBtn) {
+                    _this.nextSlide();
+                    clearTimeout(autoMoveSlideId);
+                    autoMoveSlideId = setTimeout(exploreSlideShow, 4000)
+                }
+            }
+           
+        }
+        exploreSlideShow()
+    },
 
 
 
 
+    start: function() {
+        this.prevSlide();
+        this.nextSlide();
+        this.handleEvents();
+
+    },
+};
+
+app.start();
