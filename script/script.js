@@ -1,5 +1,7 @@
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
+
 
 const navThemeBtn = $('.header__nav-btn.nav-btn--theme');
 const modalTheme = $(' .modal__theme');
@@ -10,16 +12,26 @@ const songListquick = Array.from($$('.player-quick__list'));
 const appContainers = Array.from($$('.app__container'));
 const sidebarNavItems = Array.from($$('.sidebar__nav-list .sidebar__nav-item'));
 const header = $('.header');
-// const App = $('.app');
+
+const exploreSlideLists = Array.from($$(' .explore__slide-container'))
+
+const App = $('.app');
+
+const listExploreSlide = [
+    {image: "./assets/img/Explore/1.jpg"},
+    {image: "./assets/img/Explore/2.jpg"},
+    {image: "./assets/img/Explore/3.jpg"},
+    {image: "./assets/img/Explore/4.jpg"},
+    {image: "./assets/img/Explore/5.jpg"},
+    {image: "./assets/img/Explore/6.jpg"},
+    {image: "./assets/img/Explore/7.jpg"},
+    {image: "./assets/img/Explore/8.jpg"},
+];
+const EXPLORE_SLIDE_STORAGE_KEY = 'VIK_EPLORE_SLIDE';
+localStorage.setItem(EXPLORE_SLIDE_STORAGE_KEY, JSON.stringify(listExploreSlide));
 
 
 
-
-    //Open and close model theme
-    navThemeBtn.onclick = (e) => {
-        modalTheme.classList.add('open')
-    },
-    
     modalTheme.onclick = (e) => {
         const themContainer = e.target.closest('.modal__theme .modal__theme-container')
         if (themContainer) {
@@ -32,7 +44,6 @@ const header = $('.header');
     closeModalBtn.onclick = (e) => {
         modalTheme.classList.remove('open')
     }
-
 
     //Handle when click on icons heart on Songs of quick bar
     songListquick.forEach (songList => {
@@ -54,8 +65,6 @@ const header = $('.header');
         }
 
     })
-    
-    
     
     //Handle when click on icons heart
     songLists.forEach(songList => {
@@ -107,19 +116,65 @@ const header = $('.header');
         
         });
     
+
+
+
+const app = {
     
+    exploreSlides: JSON.parse(localStorage.getItem(EXPLORE_SLIDE_STORAGE_KEY) || '[]'),
+
+    html([first, ...string], ...values) {
+        return values.reduce((acc, cur) => acc.concat(cur, string.shift()), [first])
+        .filter(x => x && x !== true || x === 0)
+        .join('')       
+    },
+
+    renderExploreSlide() {
+        exploreSlideLists.forEach((exploreSlideList, SlideIndex) => {
+            exploreSlideList.innerHTML = app.html`
+            <div class="explore__slide-move">
+                <button class="explore__slide-btn btn--prev">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="explore__slide-btn btn--next">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+            
+            
+            ${this.exploreSlides.map((exploreSlide, index) => {
+                return app.html`
+                    <div
+                        class="col col-3 explore__slide-item 
+                        ${index === 0 && 'first next' }
+                        ${index === 1 && 'second'}
+                        ${index === 2 && 'third'}
+                        ${index === 3 && 'fourth'}
+                        ${index > 3 && index < app.exploreSlides.length - 1 && 'fifth'}
+                        ${index === app.exploreSlides.length -1 && 'sixth prev'} 
+                    ">
+                        <div class="explore__slide-col-display">
+                            <div class="explore__slide-img img-pos" style="background: url('${exploreSlide.image}') no-repeat center  center / cover;"></div>
+                        </div>
+                    </div>
+                    `
+            })}
+            `
+        })
+        
+        
+    },
+    prevSlide: function() {
+        const slideMoveItems = Array.from($$('.explore__slide-container .explore__slide-item'));
+        
+        $('.explore__slide-item.next').classList.remove('next');
+        $('.explore__slide-item.prev').classList.remove('prev');
+        
         const firstSlide = $('.explore__slide-item.first');
         const secondSlide = $('.explore__slide-item.second');
         const thirdSlide = $('.explore__slide-item.third');
         const fourthSlide = $('.explore__slide-item.fourth');
         const sixthSlide = $('.explore__slide-item.sixth');
-const app = {
-   
-    prevSlide: function() {
-        const slideMoveItems = Array.from($$('.explore__slide-container .explore__slide-item'));
-        $('.explore__slide-item.next').classList.remove('next');
-        $('.explore__slide-item.prev').classList.remove('prev');
-
         const fifthSlideIndex = slideMoveItems.indexOf(sixthSlide) === 0 ? slideMoveItems.length - 1 : slideMoveItems.indexOf(sixthSlide) - 1;
 
         const fifthSlide = slideMoveItems[fifthSlideIndex]; //gán fifthSlide cho vị trí sau lưng sixth ; OUT = 2
@@ -133,65 +188,103 @@ const app = {
         sixthSlide.classList.add('next');
         sixthSlide.classList.replace('sixth', 'first'); 
     },
+
     nextSlide: function(){
         const slideMoveItems = Array.from($$('.explore__slide-container .explore__slide-item'));
         $('.explore__slide-item.next').classList.remove('next');
         $('.explore__slide-item.prev').classList.remove('prev');
+
+        const firstSlide = $('.explore__slide-item.first');
+        const secondSlide = $('.explore__slide-item.second');
+        const thirdSlide = $('.explore__slide-item.third');
+        const fourthSlide = $('.explore__slide-item.fourth');
+        const sixthSlide = $('.explore__slide-item.sixth');
         const fifthSlideIndex = slideMoveItems.indexOf(firstSlide) === slideMoveItems.length - 1 ? 0 : slideMoveItems.indexOf(firstSlide) +1;
 
-        console.log(slideMoveItems)
 
         const fifthSlide = slideMoveItems[fifthSlideIndex];
-        console.log(fifthSlide, slideMoveItems.indexOf(fifthSlide))
-
+        
+        console.log(firstSlide, "firstSlide02")
+        
         firstSlide.classList.add('prev');
-        firstSlide.classList.replace('first', 'sixth');
-        secondSlide.classList.replace('second', 'first');
-        thirdSlide.classList.replace('third', 'second');
-        fourthSlide.classList.add('next');
-        fourthSlide.classList.replace('fourth', 'third');
-        fifthSlide.classList.replace('fifth', 'fourth');
-        sixthSlide.classList.replace('sixth', 'fifth')
+        console.log(firstSlide, "thêm prev")
 
-    
+
+
+        console.log(fourthSlide, "check1")
+        fourthSlide.classList.add('next');
+        console.log(fourthSlide, "thêm next")
+
+        
+        firstSlide.classList.replace('first', 'sixth');
+        console.log(firstSlide, "firstSlide2")
+
+        console.log(secondSlide, "secondSlide bf")
+        secondSlide.classList.replace('second', 'first');
+        console.log(secondSlide, "secondSlide af")
+
+        thirdSlide.classList.replace('third', 'second');
+        console.log(thirdSlide, "thirdSlide")
+        
+        
+        
+        fourthSlide.classList.replace('fourth', 'third');
+        console.log(fourthSlide, "fourthSlide")
+
+        fifthSlide.classList.replace('fifth', 'fourth');
+        console.log(fifthSlide, "fifthSlide")
+
+        sixthSlide.classList.replace('sixth', 'fifth') 
+        console.log(sixthSlide, "sixthSlide")
+
+
     },
+
     handleEvents: function(){
         const _this = this;
-        const slideMove = $('.explore__slide-container .explore__slide-item');
+        const slideMove = $('.explore__slide-container .explore__slide-move');
 
-
+        
 
         // Handle when click on explore slide show move buttons
         function exploreSlideShow() {
             _this.nextSlide();
-            let autoMoveSlideId = setTimeout(exploreSlideShow, 4000)
+            let autoMoveSlideId = setTimeout(exploreSlideShow,4000);
             slideMove.onclick = (e) => {
-                const prevBtn = e.target.closest('.slide__move-btn.btn--prev')
-                const nextBtn = e.target.closest('.slide__move-btn.btn--next')
+                const prevBtn = e.target.closest('.slide__move.btn--prev');
+                const nextBtn = e.target.closest('.slide__move-btn.btn-next');
+                
                 
                 if(prevBtn) {
                     _this.prevSlide();
                     clearTimeout(autoMoveSlideId);
-                    autoMoveSlideId = setTimeout(exploreSlideShow, 4000)
+                    autoMoveSlideId = setTimeout(exploreSlideShow, 4000);
                 }
-    
-                if(nextBtn) {
+                if (nextBtn) {
                     _this.nextSlide();
                     clearTimeout(autoMoveSlideId);
-                    autoMoveSlideId = setTimeout(exploreSlideShow, 4000)
+                    autoMoveSlideId = setTimeout(exploreSlideShow, 4000);
                 }
+                
             }
-           
+            
         }
         exploreSlideShow()
+ 
     },
 
 
 
 
+    render : function (){
+
+        //Render Explore Slide
+        this.renderExploreSlide();
+        
+    },
     start: function() {
-        this.prevSlide();
-        this.nextSlide();
+
+        this.render();
         this.handleEvents();
 
     },
