@@ -663,3 +663,9 @@ figure {
     align-items: center;
     margin-right: 5px;
 }
+
+.is-ghost:hover {
+    color: var(--link-text-hover);
+    text-decoration: underline;
+    cursor: pointer;
+}

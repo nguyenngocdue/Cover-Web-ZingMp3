@@ -962,6 +962,16 @@ a.zm-btn {
     cursor: pointer;
 }
 
+.row__item-info-creator-subtitle {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 400;
+
+}
+
+.row__item-info-nameArtist {
+    text-decoration: none;
+}
 
 
 /* ************MODAL*************** */
@@ -1793,4 +1803,9 @@ a.zm-btn {
     color: var(--white);
     margin: 27px;
 }
+
+.row__item-info-creator-subtitle a {
+    text-decoration: none;
+}
+
 
