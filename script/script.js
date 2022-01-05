@@ -2,6 +2,8 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+
+
 const navThemeBtn = $('.header__nav-btn.nav-btn--theme');
 const modalTheme = $(' .modal__theme');
 const closeModalBtn = $(' .modal__close-btn')
@@ -14,6 +16,9 @@ const exploreSlideLists = Array.from($$(' .explore__slide-container'));
 const normalPlaylistLists = Array.from($$('.normal-playlist--section'));
 const specialPlaylistLists = Array.from($$('.special-playlist--section'));
 const playlistBannerLists = Array.from($$('.playlistBanner-container'));
+
+const playerContainer = Array.from($$(".player__container"));
+const player = $('.player');
 const App = $('.app');
 
 
@@ -234,19 +239,140 @@ var listImgBanner = [
 ];
 const LIST_IMAGE_BANNER_KEY = 'VIK_BANNER_PLAYLIST';
 localStorage.setItem(LIST_IMAGE_BANNER_KEY, JSON.stringify(listImgBanner));
+
+
+var listSong = [
+    [
+        {
+            name: "Cứ Chill Thôi",
+            singer: ["Chillies", "Suni Hạ Linh",  "Rhymastic"],
+            path: "./assets/music/listSong1/song1.mp3",
+            image: "./assets/img/music/listSong1/song1.jpg"
+        },
+        {
+            name: "Crush",
+            singer: ["WN", "Vani", "An An"],
+            path: "./assets/music/listSong1/song2.mp3",
+            image: "./assets/img/music/listSong1/song2.jpg"
+        },
+        {
+            name: "Vô Tình",
+            singer: ["Xesi", "Hoaprox"],
+            path: "./assets/music/listSong1/song3.mp3",
+            image: "./assets/img/music/listSong1/song3.jpg"
+        }
+
+    ],
+];
+const MUSIC_STORAGE_KEY = 'VIK_MUSIC';
+localStorage.setItem(MUSIC_STORAGE_KEY, JSON.stringify(listSong))
+
+
  
 const app = {
+    isPlaying: false,
     
     exploreSlides: JSON.parse(localStorage.getItem(EXPLORE_SLIDE_STORAGE_KEY) || '[]'),
     normalPlaylists: JSON.parse(localStorage.getItem(NORMAL_PLAYLIST_STORAGE_KEY) || '[]'),
     specialPlayLists: JSON.parse(localStorage.getItem(SPECIAL_PLAYLIST_STORAGE_KEY) || '[]'),
     listBannerPlaylists: JSON.parse(localStorage.getItem(LIST_IMAGE_BANNER_KEY) || '[]'),
+    songPlaylists: JSON.parse(localStorage.getItem(MUSIC_STORAGE_KEY) || '[]'),
+
 
     html([first, ...string], ...values) {
         return values.reduce((acc, cur) => acc.concat(cur, string.shift()), [first])
         .filter(x => x && x !== true || x === 0)
         .join('')       
     },
+
+    renderSong() {
+        playerContainer.forEach((playContainer, index_playContainer) => {
+           playContainer.innerHTML = app.html`
+                <div class="player__container-song">
+                    <div class="player__song-info media">
+
+                        <div class="media__left">
+                            <div class="player__song-thumb">
+                                <div class="thumb-img" style="background: url(${this.songPlaylists[index_playContainer].image}) center center / cover no-repeat;"></div>
+                            </div>
+                        </div>
+
+                        <div class="media__content">
+                            <div class="player__song-body media__info">
+                                <div class="player__song-title">
+                                    <div class="player__title-animate">
+                                        <div class="title__item">Anh Đã Quen Với Cô Đơn</div>
+                                        <div class="title__item">Anh Đã Quen Với Cô Đơn</div>
+                                    </div>
+                                </div>
+                                <div class="player__song-author info__author">
+                                    <a href="" class="is-ghost">Soobin Hoàng Sơn</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="media__right">
+                            <div class="player__song-options">
+                                <div class="player__song-btn option-btn ">
+                                    <i class="bi bi-heart-fill icon--heart primary btn-icon"></i>
+                                </div>
+                                <div class="player__song-btn option-btn">
+                                    <i class="bi bi-three-dots"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="player__control">
+                    <div class="player__control-btn">
+                        <div class="control-btn">
+                            <i class="bi bi-shuffle"></i>
+                        </div>
+                        <div class="control-btn">
+                            <i class="bi bi-skip-start-fill"></i>
+                        </div>
+                        <div class="control-btn btn-toggle-play btn--play-song">
+                            <i class="bi bi-pause icon-pause"></i>
+                            <i class="bi bi-play-fill icon-play"></i> 
+                        </div>
+                        <div class="control-btn">
+                            <i class="bi bi-skip-end-fill"></i>
+                        </div>
+                        <div class="control-btn">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+                    </div>
+                    <div class="progress-block">
+                        <span class="tracktime">00:00</span>
+                        <input id="progress--main" class="progress" type="range" value="0" step="1" min="0" max="100">
+                        <span class="durationtime">03:55</span>
+                    </div>
+
+                </div>
+                <div class="player__options">
+                    <div class="player__options-container">
+                        <div class="player__options-btn option-btn">
+                            <i class="bi bi-camera-video btn-icon"></i>
+                        </div>
+                        <div class="player__options-btn option-btn">
+                            <i class="bi bi-mic btn-icon"></i>
+                        </div>
+                        <div class="player__options-btn option-btn">
+                            <i class="bi bi-volume-up btn-icon"></i>
+                        </div>
+                        <div class="player__volume-progress">
+                            <input type="range" class="volume__range" value="100" step="1" min="0" max="100">
+                        </div>
+                        <div class="player__list-icon">
+                            <i class="bi bi-music-note-list btn-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <audio id="audio" src="./assets/music/listSong1/song1.mp3"></audio>
+       `
+   })
+   },
 
     renderExploreSlide() {
         exploreSlideLists.forEach((exploreSlideList, SlideIndex) => {
@@ -362,6 +488,32 @@ const app = {
     handleEvents: function(){
         const _this = this;
         const slideMove = $('.explore__slide-container .explore__slide-move');
+        const playBtns = Array.from($$('.btn-toggle-play.btn--play-song'));
+        const audio = $('#audio');
+
+        // Handle when click play
+        playBtns.forEach(playBtn => {
+            playBtn.onclick = function() {
+                if (_this.isPlaying){
+                    audio.pause();
+                }
+                else {
+                    audio.play();
+                }
+            }
+        })
+
+        // When the song is played
+        audio.onplay = function() {
+            player.classList.add('playing');
+        }
+
+        //when the song is paused
+        audio.onpause = function() {
+            player.classList.remove('playing');
+        }
+        
+
 
         
 
@@ -389,6 +541,103 @@ const app = {
             
         }
         exploreSlideShow()
+
+
+
+
+
+        modalTheme.onclick = (e) => {
+            const themContainer = e.target.closest('.modal__theme .modal__theme-container')
+            if (themContainer) {
+                e.stopPropagation()
+            }
+            else {
+                modalTheme.classList.remove('open')
+            }
+        }
+        closeModalBtn.onclick = (e) => {
+            modalTheme.classList.remove('open')
+        }
+        
+        //Handle when click on icons heart on Songs of quick bar
+        songListquick.forEach (songList => {
+            songList.onclick = function(e) {
+                const heartIconBtn = e.target.closest('.song-btn--heart');
+                // console.log(heartIconBtn)
+        
+                if (heartIconBtn) {
+                    const heartIcon = heartIconBtn.firstElementChild;
+                    if (heartIcon.classList.contains('primary')){
+                        heartIcon.classList.replace('bi-heart-fill', 'bi-heart')
+                        heartIcon.classList.remove('primary')
+                    }
+                    else {
+                        heartIcon.classList.replace('bi-heart', 'bi-heart-fill');
+                        heartIcon.classList.toggle('primary')
+                    }
+                }
+            }
+        
+        })
+        
+        //Handle when click on icons heart
+        songLists.forEach(songList => {
+            songList.onclick = function(e) {
+                const heartIconBtn = e.target.closest('.song-btn--heart');
+                const micIconBtn = e.target.closest('.btn--mic')
+                // console.log(heartIconBtn, "Parents")
+        
+                //Handle when click on icons heart
+                if (heartIconBtn) {
+                    const heartIcon =heartIconBtn.firstElementChild;
+                    // console.log(heartIcon, "Child")
+        
+                    if(heartIcon.classList.contains('primary')){
+                        heartIcon.classList.replace('bi-heart-fill', 'bi-heart');
+                        heartIcon.classList.remove('primary');
+        
+                    }
+                    else {
+                        heartIcon.classList.replace('bi-heart', 'bi-heart-fill');
+                        heartIcon.classList.toggle('primary');
+                    }
+                }
+        
+                ////Handle when click on icons miccro
+                if(micIconBtn) {
+                    const micIcon = micIconBtn.firstElementChild
+                    micIcon.classList.toggle('primary');
+            
+                }
+        
+            }
+        })
+        
+        //Handle when click on siderbar items
+        sidebarNavItems.forEach((sidebarNavItem, index) => {
+                sidebarNavItem.onclick = (e) => {
+                    // Object.assign(header.style, {
+                    //     backgroundColor: 'transparent',
+                    //     boxShadow: 'none',
+                    // })
+        
+                    $('.app__container.active').classList.remove('active');
+                    appContainers[index].classList.add('active')
+        
+                    $('.sidebar__nav-item.active').classList.remove('active');
+                    sidebarNavItems[index].classList.add('active');        
+                }
+            
+        })
+
+
+
+
+
+
+
+
+
  
     },
 
@@ -545,13 +794,13 @@ const app = {
 
 
 
-
     render : function (){
         //Render Explore Slide
         this.renderExploreSlide();
         this.renderNomalPlaylist();
         this.renderSpecialPlaylist();
         this.renderBannerPlaylist();
+        this.renderSong();
         
     },
     start: function() {
@@ -567,86 +816,3 @@ app.start();
 
 
 
-modalTheme.onclick = (e) => {
-    const themContainer = e.target.closest('.modal__theme .modal__theme-container')
-    if (themContainer) {
-        e.stopPropagation()
-    }
-    else {
-        modalTheme.classList.remove('open')
-    }
-}
-closeModalBtn.onclick = (e) => {
-    modalTheme.classList.remove('open')
-}
-
-//Handle when click on icons heart on Songs of quick bar
-songListquick.forEach (songList => {
-    songList.onclick = function(e) {
-        const heartIconBtn = e.target.closest('.song-btn--heart');
-        // console.log(heartIconBtn)
-
-        if (heartIconBtn) {
-            const heartIcon = heartIconBtn.firstElementChild;
-            if (heartIcon.classList.contains('primary')){
-                heartIcon.classList.replace('bi-heart-fill', 'bi-heart')
-                heartIcon.classList.remove('primary')
-            }
-            else {
-                heartIcon.classList.replace('bi-heart', 'bi-heart-fill');
-                heartIcon.classList.toggle('primary')
-            }
-        }
-    }
-
-})
-
-//Handle when click on icons heart
-songLists.forEach(songList => {
-    songList.onclick = function(e) {
-        const heartIconBtn = e.target.closest('.song-btn--heart');
-        const micIconBtn = e.target.closest('.btn--mic')
-        // console.log(heartIconBtn, "Parents")
-
-        //Handle when click on icons heart
-        if (heartIconBtn) {
-            const heartIcon =heartIconBtn.firstElementChild;
-            // console.log(heartIcon, "Child")
-
-            if(heartIcon.classList.contains('primary')){
-                heartIcon.classList.replace('bi-heart-fill', 'bi-heart');
-                heartIcon.classList.remove('primary');
-
-            }
-            else {
-                heartIcon.classList.replace('bi-heart', 'bi-heart-fill');
-                heartIcon.classList.toggle('primary');
-            }
-        }
-
-        ////Handle when click on icons miccro
-        if(micIconBtn) {
-            const micIcon = micIconBtn.firstElementChild
-            micIcon.classList.toggle('primary');
-    
-        }
-
-    }
-})
-
-//Handle when click on siderbar items
-sidebarNavItems.forEach((sidebarNavItem, index) => {
-        sidebarNavItem.onclick = (e) => {
-            // Object.assign(header.style, {
-            //     backgroundColor: 'transparent',
-            //     boxShadow: 'none',
-            // })
-
-            $('.app__container.active').classList.remove('active');
-            appContainers[index].classList.add('active')
-
-            $('.sidebar__nav-item.active').classList.remove('active');
-            sidebarNavItems[index].classList.add('active');        
-        }
-    
-});
